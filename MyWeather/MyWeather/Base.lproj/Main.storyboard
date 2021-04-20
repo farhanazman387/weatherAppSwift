@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QVV-UF-joX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="qXC-IL-H5y">
+            <objects>
+                <viewController id="QVV-UF-joX" customClass="welcomeViewController" customModule="MyWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="haM-LS-IbI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-Wh-lPs">
+                                <rect key="frame" x="20" y="200" width="374" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO MY FIRST MULTI VIEW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6i-Qe-YFe">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDI-XW-C7a">
+                                        <rect key="frame" x="0.0" y="20.5" width="374" height="30"/>
+                                        <state key="normal" title="Tap to see the weather forcast"/>
+                                        <connections>
+                                            <action selector="goToNextView:" destination="QVV-UF-joX" eventType="touchUpInside" id="Dym-gj-diD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f5M-qB-k7o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f5M-qB-k7o" firstAttribute="trailing" secondItem="oMR-Wh-lPs" secondAttribute="trailing" constant="20" id="JhE-hO-Bbd"/>
+                            <constraint firstItem="oMR-Wh-lPs" firstAttribute="leading" secondItem="f5M-qB-k7o" secondAttribute="leading" constant="20" id="mu6-EA-TEj"/>
+                            <constraint firstItem="oMR-Wh-lPs" firstAttribute="top" secondItem="f5M-qB-k7o" secondAttribute="top" constant="200" id="wh9-oG-oLR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="d6i-Qe-YFe" id="QiP-WU-coc"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="weatherSague" id="Akr-97-Yhr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RmM-tf-lir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-734.78260869565224" y="85.714285714285708"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZOZ-5c-FTA">
+                                <rect key="frame" x="0.0" y="40" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1H4-Nt-GOy">
+                                <rect key="frame" x="0.0" y="0.0" width="47" height="40"/>
+                                <state key="normal" title="&lt; Back"/>
+                                <connections>
+                                    <action selector="goBackToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUD-zf-ZVe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-CM-X3n">
+                                <rect key="frame" x="362" y="0.0" width="52" height="40"/>
+                                <state key="normal" title="Chart &gt;"/>
+                                <connections>
+                                    <action selector="goToGraphPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Qz-75-SFH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZOZ-5c-FTA" firstAttribute="top" secondItem="yIT-CM-X3n" secondAttribute="bottom" id="7K6-IB-B2Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZOZ-5c-FTA" secondAttribute="bottom" id="E6s-9r-6DP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZOZ-5c-FTA" secondAttribute="trailing" id="J41-OW-MFS"/>
+                            <constraint firstItem="1H4-Nt-GOy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ka4-hR-z1A"/>
+                            <constraint firstItem="ZOZ-5c-FTA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="SVe-5g-glC"/>
+                            <constraint firstItem="ZOZ-5c-FTA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TOD-o4-rVr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yIT-CM-X3n" secondAttribute="trailing" id="TbS-cU-lnj"/>
+                            <constraint firstItem="1H4-Nt-GOy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c5d-2u-JfA"/>
+                            <constraint firstItem="ZOZ-5c-FTA" firstAttribute="top" secondItem="1H4-Nt-GOy" secondAttribute="bottom" id="pNf-dC-jqV"/>
+                            <constraint firstItem="yIT-CM-X3n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="phe-XT-tUt"/>
+                            <constraint firstItem="yIT-CM-X3n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1H4-Nt-GOy" secondAttribute="trailing" constant="8" symbolic="YES" id="ptw-lS-Qwe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="ZOZ-5c-FTA" id="5zs-Iv-6OE"/>
+                        <segue destination="QVV-UF-joX" kind="showDetail" identifier="WeatherHomeSergue" id="qhz-No-r8t"/>
+                        <segue destination="jBj-TH-Ooh" kind="showDetail" identifier="WeatherWithGraph" id="dKW-Yd-wmj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="75"/>
+        </scene>
+        <!--Weather With Line Graph-->
+        <scene sceneID="bgU-4j-iIt">
+            <objects>
+                <viewController id="jBj-TH-Ooh" customClass="weatherWithLineGraph" customModule="MyWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yID-Db-3Pf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9P-cl-Uor">
+                                <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                <state key="normal" title="&lt; Back"/>
+                                <connections>
+                                    <action selector="backToWeather:" destination="jBj-TH-Ooh" eventType="touchUpInside" id="13x-Ft-CJW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sY3-qj-vX1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sY3-qj-vX1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d9P-cl-Uor" secondAttribute="trailing" symbolic="YES" id="WPa-LV-2cX"/>
+                            <constraint firstItem="d9P-cl-Uor" firstAttribute="leading" secondItem="sY3-qj-vX1" secondAttribute="leading" id="kVG-kv-1H6"/>
+                            <constraint firstItem="d9P-cl-Uor" firstAttribute="top" secondItem="sY3-qj-vX1" secondAttribute="top" id="vgW-IS-Dvm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="BcakToWeatherOri" id="8wx-mc-UuP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z4W-j9-LfC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.00000000000011" y="73.660714285714278"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dKW-Yd-wmj"/>
+        <segue reference="8wx-mc-UuP"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
